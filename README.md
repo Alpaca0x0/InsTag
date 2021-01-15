@@ -11,7 +11,7 @@ $ pip install -r requirements
 2. Git Clone
 ```bash
 $ mkdir InsTag
-$ cd InsTag
+$ cd InsTag/
 $ git clone https://github.com/alpaca0x0/InsTag.git
 ```
 
