@@ -22,3 +22,24 @@ $ python3 main.py
 
 # 操作
 打上關鍵字即可開始下載圖片。
+
+# 相關參數
+ > 自動跳過下載時，下一頁的等待秒數
+ > ```bash
+ > $ python3 main.py --auto
+ > ```
+ > or
+ > ```bash
+ > $ python3 main.py -a
+ > ```
+
+---
+
+ > 除錯模式。可以看見詳細的後台運作步驟
+ > ```bash
+ > $ python3 main.py --debug
+ > ```
+ > or
+ > ```bash
+ > $ python3 main.py -d
+ > ```
