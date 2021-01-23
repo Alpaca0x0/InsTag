@@ -31,9 +31,7 @@ def download(req_headers,file_name,file_url,save_path=""):
 
 	if not os.path.exists(save_path):
 		os.makedirs(save_path)
-	if not len(glob.glob(save_path+file_name+"*"))>0:
-		os.mknod(save_path+file_name)
-	else:
+	if len(glob.glob(save_path+file_name+"*"))>0:
 		print("檔案已存在，跳過「"+save_path+file_name+"」\n")
 		return
 

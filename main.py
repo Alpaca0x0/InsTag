@@ -81,9 +81,9 @@ print("\nHelp? Run with \"--help\".")
 while 1:
     print("-"*32)
     jump=False #break double loop    
-    keyword=input("關鍵字：＃").strip().replace(" ","")
+    keyword=input("關鍵字: #").strip().replace(" ","")
     while keyword=="":
-        keyword=input("請輸入關鍵字：＃").strip().replace(" ","")
+        keyword=input("請輸入關鍵字: #").strip().replace(" ","")
         continue
     while 1:
         req=Req("https://","imginn.com","/api/tags/?id=",keyword) #目標
@@ -93,7 +93,7 @@ while 1:
             print("Bad request -「"+req.url+"」\n")
             if sysAuto:
                 print("-"*32)
-                print("關鍵字：＃"+req.keyword)
+                print("關鍵字: #"+req.keyword)
                 continue
             else:
                 if input("請求失敗，繼續？ (Y/N) ").lower().strip() == "n":
@@ -101,7 +101,7 @@ while 1:
                     break
                 else:
                     print("-"*32)
-                    print("關鍵字：＃"+req.keyword)
+                    print("關鍵字: #"+req.keyword)
                     continue
         else:
             break
