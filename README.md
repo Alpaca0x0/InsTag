@@ -5,7 +5,7 @@
 # Step
 1. 安裝所需函式庫
 ```bash
-$ pip install -r requirements
+$ pip3 install -r requirements
 ```
 
 2. Git Clone
