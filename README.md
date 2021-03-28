@@ -9,14 +9,13 @@
 # Step
 1. 安裝所需函式庫
 ```bash
-$ pip3 install -r requirements
+$ pip3 install -r requirements.txt
 ```
 
 2. Git Clone
 ```bash
-$ mkdir InsTag
-$ cd InsTag/
 $ git clone https://github.com/alpaca0x0/InsTag.git
+$ cd InsTag/
 ```
 
 3. Run!
