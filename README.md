@@ -1,3 +1,6 @@
+# Invalidation
+Insta updated... it's Invalidation :(
+
 # InsTag
 這是一個 `Python` 爬蟲。
 輸入**關鍵字**，即可開始下載符合該**關鍵字**的**Hashtag**且為**公開貼文**的**圖片**。(預設儲存路徑為 `/save/<Hashtag>/`)
