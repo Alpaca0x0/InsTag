@@ -1,3 +1,4 @@
+#!/bin/python3
 # -*- coding: utf-8 -*
 import sys
 from datetime import datetime
@@ -108,7 +109,6 @@ while 1:
     if jump:
         continue
 
-
 # 解析
     download_part=1
     jump="n"
@@ -121,7 +121,7 @@ while 1:
         for i in range(len(datas["items"])):
             req.useragent=set_header_user_agent()
             req.headers={"User-Agent": req.useragent}
-            download.download(req_headers=req.headers,file_name=datas["items"][i]["code"]+"_"+datas["items"][i]["alt"],file_url=datas["items"][i]["src"],save_path="./save/"+req.keyword+"/")
+            download.download(req_headers=req.headers,file_name=datas["items"][i]["id"]+"_"+datas["items"][i]["code"],file_url=datas["items"][i]["src"],save_path="./save/"+req.keyword+"/")
 
     #存在下一頁
         if datas["hasNext"]:
