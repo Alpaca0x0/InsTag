@@ -10,15 +10,15 @@ Insta updated... it's Invalidation :(
 (其他版本請自行測試，建議至少 **Python 3**)
 
 # Step
-1. 安裝所需函式庫
-```bash
-$ pip3 install -r requirements.txt
-```
-
-2. Git Clone
+1. Git Clone
 ```bash
 $ git clone https://github.com/alpaca0x0/InsTag.git
 $ cd InsTag/
+```
+
+2. 安裝所需函式庫
+```bash
+$ pip3 install -r requirements.txt
 ```
 
 3. Run!
