@@ -97,13 +97,13 @@ while 1:
                 print("關鍵字: #"+req.keyword)
                 continue
             else:
-                if input("請求失敗，繼續？ (Y/N) ").lower().strip() == "n":
-                    jump=True #break double loop    
-                    break
-                else:
+                if input("請求失敗，繼續？ (Y/N) ").lower().strip() == "y":
                     print("-"*32)
                     print("關鍵字: #"+req.keyword)
                     continue
+                else:
+                    jump=True #break double loop
+                    break
         else:
             break
     if jump:
