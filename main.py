@@ -17,32 +17,32 @@ class _info():
     def __init__(self):
         self.name="Instag"
         self.author="Alpaca0x0"
-        self.version="1.0"
-        self.update="2021/01/16"
+        self.version="1.1"
+        self.update="2023/06/31"
 _info=_info()
 
 #############################################
 
-sysDebug=False #debug
+sysDebug=False #debug mode
 sysAuto=False #auto download
 if ("--help" in sys.argv) or ("-h" in sys.argv):
     print("Commands:")
-    print("  --auto, -a\n  No need to wait for seconds between pages. (頁數之間不須等待秒數，立刻開始下載下一頁)。\n")
-    print("  --debug, -d\n  Debug Mode. (除錯模式)\n")
+    print("  --auto, -a\n  No need to wait for seconds between pages. (頁數之間不須等待秒數，立刻開始下載下一頁)\n")
+    print("  --debug, -d\n  Debug Mode (除錯模式). (能夠顯示更多詳細資訊)\n")
 
     exit()
 
 if ("--auto" in sys.argv) or ("-a" in sys.argv):
-    sysAuto=True;
+    sysAuto=True
     print("Auto Mode On")
 if ("--debug" in sys.argv) or ("-d" in sys.argv):
-    sysDebug=True;
+    sysDebug=True
     print("Debug Mode On")
 
 #############################################
 
 def exit(signum, frame):
-    print('\n Stoped '+_info.name+'！ \n')
+    print('\n\nStoped '+_info.name+'！ \n')
     sys.exit()
 signal.signal(signal.SIGINT, exit)
 signal.signal(signal.SIGTERM, exit)
@@ -88,8 +88,11 @@ while 1:
         continue
     while 1:
         req=Req("https://","imginn.com","/api/tags/?id=",keyword) #目標
+        sys.stdout.write("Host --???--> " + req.domain + "\n")
+        sys.stdout.flush()
         req.data=requests.get(req.url,headers=req.headers,timeout=15) #將此頁面的HTML GET下來
-        print("Host -> "+req.domain+" -> "+str(req.data.status_code))
+        sys.stdout.write("\u001b[1A\u001b[2K"+"Host --" + str(req.data.status_code) + "--> " + req.domain + "\n")
+        sys.stdout.flush()
         if req.data.status_code != requests.codes.ok:
             print("Bad request -「"+req.url+"」\n")
             if sysAuto:
@@ -129,7 +132,7 @@ while 1:
                 signal.signal(signal.SIGALRM, interrupted)
                 signal.alarm(5) #計時5秒
                 try:
-                    jump=input("存在下一頁，繼續下載嗎 (5秒後 自動下載)？ (Y/N) ").lower().strip()
+                    jump=input("本頁資料下載完畢，繼續到下一頁下載嗎 (5秒後 自動下載)？ (Y/N) ").lower().strip()
                 except: #InputTimeoutError:
                     #無訊號，默認繼續下載
                     print("繼續下載...")
@@ -140,13 +143,17 @@ while 1:
                     print("取消繼續")
                     break
             else:
-                print("\n存在下一頁，接收參數「--auto」自動下載...")
+                # print("\n存在下一頁，接收參數「--auto」自動下載...")
+                print("\n本頁資料下載完畢，自動前往下一頁")
 
             while 1:
                 jump=False
                 req=Req(req.protocol,req.domain,req.path,keyword=req.keyword,hasNext="&cursor="+datas["cursor"]) #目標
+                sys.stdout.write("Host --???--> " + req.domain + "\n")
+                sys.stdout.flush()
                 req.data=requests.get(req.url,headers=req.headers,timeout=15) #將此頁面的HTML GET下來
-                print("Host -> "+req.domain+" -> "+str(req.data.status_code))
+                sys.stdout.write("\u001b[1A\u001b[2K"+"Host --" + str(req.data.status_code) + "--> " + req.domain + "\n")
+                sys.stdout.flush()
                 if req.data.status_code != requests.codes.ok:
                     print("Bad request -「"+req.url+"」\n")
                     if sysAuto:
