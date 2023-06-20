@@ -1,48 +1,42 @@
 # InsTag
 這是一個 `Python` 爬蟲。
-輸入**關鍵字**，即可開始下載符合該**關鍵字**的**Hashtag**且為**公開貼文**的**圖片**。(預設儲存路徑為 `/save/<Hashtag>/`)
+輸入**關鍵字**，即可開始下載符合該**關鍵字**的 **Hashtag** 且為**公開貼文**的**圖片**。(預設儲存路徑為 `/save/<Hashtag>/`)
 
 # Version
-測試版本為 **Python 3.6.9**
-(其他版本請自行測試，建議至少 **Python 3**)
+> Version：`v1.1`
+
+> Last Update：`2023/06/31`
+
+> Python：`v3.6.9`
 
 # Step
-1. Git Clone
+1. Clone the project
 ```bash
 $ git clone https://github.com/alpaca0x0/InsTag.git
 $ cd InsTag/
 ```
 
-2. 安裝所需函式庫
+2. Install libraries
 ```bash
 $ pip3 install -r requirements.txt
 ```
 
-3. Run!
+3. Run it !
 ```bash
 $ python main.py
 ```
 
-# 操作
-打上關鍵字即可開始下載圖片。
+# Usage
 
-# 相關參數
- > 自動跳過在下載時存在下一頁的等待秒數
- > ```bash
- > $ python main.py --auto
- > ```
- > or
- > ```bash
- > $ python main.py -a
- > ```
+1. Run the `main.py`.
+2. Enter a `#hashtag` for the image you want to download.
+3. Check images. (By default the file will be saved to path `./save/<hashtag>/`)
 
----
+### Arguments
 
- > 除錯模式。可以看見較為詳細的後台運作
- > ```bash
- > $ python main.py --debug
- > ```
- > or
- > ```bash
- > $ python main.py -d
- > ```
+> --auto, -a\
+  No need to wait for seconds between pages. (頁數之間不須等待秒數，立刻開始下載下一頁)
+
+> --debug, -d\
+  Debug Mode (除錯模式，能夠顯示更多詳細資訊)
+
