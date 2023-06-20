@@ -26,9 +26,9 @@ _info=_info()
 sysDebug=False #debug mode
 sysAuto=False #auto download
 if ("--help" in sys.argv) or ("-h" in sys.argv):
-    print("Commands:")
+    print("Arguments:")
     print("  --auto, -a\n  No need to wait for seconds between pages. (頁數之間不須等待秒數，立刻開始下載下一頁)\n")
-    print("  --debug, -d\n  Debug Mode (除錯模式). (能夠顯示更多詳細資訊)\n")
+    print("  --debug, -d\n  Debug Mode (除錯模式，能夠顯示更多詳細資訊)\n")
 
     exit()
 
